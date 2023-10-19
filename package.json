@@ -12,8 +12,7 @@
     "test:coverage": "yarn workspaces foreach run test:coverage",
     "test": "yarn workspaces foreach run test",
     "lint": "yarn workspaces foreach run lint",
-    "deploy:alpha": "yarn workspaces foreach run deploy:alpha",
-    "deploy:prod": "yarn workspaces foreach run deploy:prod"
+    "deploy": "yarn workspaces foreach run deploy"
   },
   "devDependencies": {
     "eslint": "^8.51.0",
