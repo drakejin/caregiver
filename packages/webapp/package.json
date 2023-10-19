@@ -19,9 +19,10 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "deploy:local": "nest build --webpack & serverless offline --region=ap-northeast-2",
-    "deploy:alpha": "nest build --webpack & serverless deploy --stage=alpha --region=ap-northeast-2",
-    "metrics:alpha": "serverless metrics --stage=alpha --region=ap-northeast-2",
-    "logs:alpha": "aws --region=ap-northeast-2 logs tail /aws/lambda/caregiver-webapp-alpha-server --follow"
+
+    "deploy": "nest build --webpack & serverless deploy --stage=prod --region=ap-northeast-2",
+    "metrics": "serverless metrics --stage=prod --region=ap-northeast-2",
+    "logs": "aws --region=ap-northeast-2 logs tail /aws/lambda/caregiver-webapp-prod-server --follow"
   },
   "dependencies": {
     "@fastify/aws-lambda": "^3.3.0",

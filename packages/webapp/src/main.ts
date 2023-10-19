@@ -2,18 +2,21 @@ import serverlessFastify, { CallbackHandler } from '@fastify/aws-lambda';
 import { Callback, Context, Handler } from 'aws-lambda';
 import { createServer } from './server';
 
-let app;
+const fastifiedLambda = async (): Promise<Handler> => {
+  const app = await createServer();
+  const instance = app.getHttpAdapter().getInstance();
+  const fastified: CallbackHandler = serverlessFastify(instance);
+  return fastified;
+};
 
+let lambdaHandler: Handler;
 export const handler: Handler = async (
   event: any,
   context: Context,
   callback: Callback,
 ) => {
-  app = app ?? (await createServer());
-  const instance = app.getHttpAdapter().getInstance();
-  const lambda: CallbackHandler = serverlessFastify(instance);
-  console.log(event);
-  return lambda(event, context, callback);
+  lambdaHandler = lambdaHandler ?? (await fastifiedLambda());
+  return lambdaHandler(event, context, callback);
 };
 
 async function start() {
