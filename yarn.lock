@@ -1072,6 +1072,7 @@ __metadata:
     "@nestjs/platform-fastify": ^10.2.7
     "@nestjs/schematics": ^10.0.2
     "@nestjs/testing": ^10.2.7
+    "@types/aws-lambda": ^8.10.125
     "@types/jest": ^29.5.6
     "@types/node": ^20.8.7
     "@types/supertest": ^2.0.15
@@ -2877,6 +2878,13 @@ __metadata:
   version: 1.0.4
   resolution: "@tsconfig/node16@npm:1.0.4"
   checksum: 202319785901f942a6e1e476b872d421baec20cf09f4b266a1854060efbf78cde16a4d256e8bc949d31e6cd9a90f1e8ef8fb06af96a65e98338a2b6b0de0a0ff
+  languageName: node
+  linkType: hard
+
+"@types/aws-lambda@npm:^8.10.125":
+  version: 8.10.125
+  resolution: "@types/aws-lambda@npm:8.10.125"
+  checksum: dec6db30ac3069f146cdb05ee469e6f6773a9f3446a3f686e7eb0a0a6ebac336bb0a850eb591b03e42bee7122adf54eca20371951bd7b3d67622f228336ed1bc
   languageName: node
   linkType: hard
 

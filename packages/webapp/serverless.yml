@@ -36,7 +36,9 @@ provider:
 
 functions:
   server:
-    handler: dist/lambda.handler
+    handler: dist/main.handler
+    environment:
+      NEST_ENV: lambda
     events:
       - httpApi:
           path: /
