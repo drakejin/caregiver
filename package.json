@@ -1,0 +1,32 @@
+{
+  "name": "@caregiver/monorepo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/drakejin/caregiver",
+  "author": "drakejin(jin.search) <dydwls121200@gmail.com>",
+  "license": "MIT",
+  "workspaces": [
+    "packages/webapp"
+  ],
+  "scripts": {
+    "test:coverage": "yarn workspaces foreach run test:coverage",
+    "test": "yarn workspaces foreach run test",
+    "lint": "yarn workspaces foreach run lint",
+    "deploy:alpha": "yarn workspaces foreach run deploy:alpha",
+    "deploy:prod": "yarn workspaces foreach run deploy:prod"
+  },
+  "devDependencies": {
+    "eslint": "^8.51.0",
+    "prettier": "^3.0.3",
+    "serverless": "^3.35.2",
+    "serverless-deployment-bucket": "^1.6.0",
+    "serverless-offline": "^13.2.0",
+    "serverless-plugin-monorepo": "^0.11.0",
+    "typescript": "^5.2.2"
+  },
+  "resolutions": {
+    "prettier": "^3.0.0",
+    "typescript": "^5.2.2"
+  },
+  "packageManager": "yarn@3.6.4"
+}

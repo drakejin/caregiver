@@ -1,0 +1,46 @@
+# it's only allowed at us-east-2
+# org: drakejin
+# app: caregiver-webapp
+service: caregiver-webapp
+frameworkVersion: '3'
+configValidationMode: error
+
+package:
+  patterns:
+    - '!.yarn/**'
+    - '!yarn.lock'
+    - '!.vscode/**'
+    - '!src/**'
+    - '!test/**'
+    - '!.envrc'
+    - '!.yarnrc.yml'
+    - '!README.md'
+
+plugins:
+  - serverless-offline
+  - serverless-deployment-bucket
+  - serverless-plugin-monorepo
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  memorySize: 512 # mb
+  timeout: 5 # seconds
+  versionFunctions: false
+  architecture: arm64
+  logRetentionInDays: 14
+
+  deploymentBucket:
+    name: drakejin-serverless-bucket
+    serverSideEncryption: AES256
+
+functions:
+  server:
+    handler: dist/main.handler
+    events:
+      - httpApi:
+          path: /
+          method: ANY
+      - httpApi:
+          method: ANY
+          path: '/{proxy+}'
