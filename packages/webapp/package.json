@@ -18,9 +18,7 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-
     "deploy:local": "nest build --webpack & serverless offline --region=ap-northeast-2",
-
     "deploy:alpha": "nest build --webpack & serverless deploy --stage=alpha --region=ap-northeast-2",
     "metrics:alpha": "serverless metrics --stage=alpha --region=ap-northeast-2",
     "logs:alpha": "aws --region=ap-northeast-2 logs tail /aws/lambda/caregiver-webapp-alpha-server --follow"
@@ -34,6 +32,7 @@
     "@nestjs/platform-express": "^10.2.7",
     "@nestjs/platform-fastify": "^10.2.7",
     "aws-lambda": "^1.0.7",
+    "handlebars": "^4.7.8",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1"
   },
