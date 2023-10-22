@@ -15,6 +15,7 @@
     "deploy": "yarn workspaces foreach run deploy"
   },
   "devDependencies": {
+    "@nanogiants/nestjs-swagger-api-exception-decorator": "^1.6.11",
     "eslint": "^8.51.0",
     "prettier": "^3.0.3",
     "serverless": "^3.35.2",

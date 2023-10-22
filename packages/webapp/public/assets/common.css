@@ -1,0 +1,17 @@
+body, html {
+  background-color: #e2e2e8;
+  height: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+
+  font-size: 16px;;
+}
+
+a, b, body, caption, dd, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, iframe, img, input, label, legend, li, ol, p, pre, select, span, strong, table, tbody, td, textarea, tfoot, th, thead, tr, ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body > aside
