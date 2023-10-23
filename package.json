@@ -6,7 +6,8 @@
   "author": "drakejin(jin.search) <dydwls121200@gmail.com>",
   "license": "MIT",
   "workspaces": [
-    "packages/webapp"
+    "packages/webapp",
+    "packages/nextjs"
   ],
   "scripts": {
     "test:coverage": "yarn workspaces foreach run test:coverage",
